@@ -1,6 +1,6 @@
 const { handleSuccess, handleError, tryParse } = require('serverless-helpers/responses');
 
-const mongoose = require('./mongoose');
+const mongoose = require('./lib/mongoose');
 const drawName = require('./lib/drawName');
 const { fetchUsers, updateUser } = require('./lib/service');
 const { superSecretUri } = require('./lib/config');

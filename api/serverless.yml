@@ -3,6 +3,8 @@ service: hat-draw
 provider:
   name: aws
   runtime: nodejs6.10
+  # environment:
+    # MONGODB_URI: ${file(./config.yml):MONGODB_URI}
 
 functions:
   hatDraw:
