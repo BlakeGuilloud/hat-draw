@@ -1,7 +1,6 @@
 const mongoose = require('./mongoose');
-const { superSecretUri } = require('./config');
 
-const db = mongoose.connect(superSecretUri, { useMongoClient: true });
+const db = mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
 
 const User = require('./model');
 const data = require('./seedData');

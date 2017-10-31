@@ -3,10 +3,9 @@ const { handleSuccess, handleError, tryParse } = require('serverless-helpers/res
 const mongoose = require('./lib/mongoose');
 const drawName = require('./lib/drawName');
 const { fetchUsers, updateUser } = require('./lib/service');
-const { superSecretUri } = require('./lib/config');
 
 module.exports.hatDraw = (event, context, callback) => {
-  const db = mongoose.connect(superSecretUri, { useMongoClient: true });
+  const db = mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
 
   fetchUsers()
     .then(data => drawName(tryParse(event.body).name, data))
