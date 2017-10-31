@@ -1,5 +1,5 @@
 const generateRandomIdx = (min = 0, max = 6) =>
-  Math.floor(Math.random() * (max - 0)) + 0;
+  Math.floor(Math.random() * (max - min)) + min;
 
 const fetchRandomUser = data =>
   data[generateRandomIdx(0, data.length)].name;

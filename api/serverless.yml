@@ -9,3 +9,8 @@ provider:
 functions:
   hatDraw:
     handler: handler.hatDraw
+    events:
+      - http:
+          path: hatDraw
+          method: post
+          cors: true
