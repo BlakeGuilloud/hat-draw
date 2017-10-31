@@ -10,9 +10,9 @@ const fetchDrawNameData = (user, data) => ({
 });
 
 const drawName = (str, data, drawCount = 0) => {
-  const { randomUser, user } = fetchDrawNameData(str, data);
-
   const drawCountClone = drawCount + 1;
+  
+  const { randomUser, user } = fetchDrawNameData(str, data);
 
   if (drawCountClone === 10) {
     throw new Error('too many tries..');
@@ -26,10 +26,7 @@ const drawName = (str, data, drawCount = 0) => {
     console.log('drawn!');
     return drawName(user.name, data, drawCountClone)
   } else {
-    return {
-      randomUser,
-      user,
-    };
+    return { randomUser, user };
   }
 };
 

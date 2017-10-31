@@ -5,7 +5,7 @@ const { superSecretUri } = require('./config');
 const db = mongoose.connect(superSecretUri, { useMongoClient: true });
 mongoose.Promise = global.Promise;
 
-const User = require('./User.model');
+const User = require('./model');
 
 const data = [
   {
