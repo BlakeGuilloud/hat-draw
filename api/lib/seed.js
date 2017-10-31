@@ -11,37 +11,37 @@ const data = [
   {
     name: 'blake',
     spouse: 'carolyn',
-    drawn: false,
+    drawnBy: '',
   },
   {
     name: 'jen',
     spouse: 'thomas',
-    drawn: false,
+    drawnBy: '',
   },
   {
     name: 'thomas',
     spouse: 'jen',
-    drawn: false,
+    drawnBy: '',
   },
   {
     name: 'carolyn',
     spouse: 'blake',
-    drawn: false,
+    drawnBy: '',
   },
   {
     name: 'brian',
     spouse: 'asuka',
-    drawn: false,
+    drawnBy: '',
   },
   {
     name: 'asuka',
     spouse: 'brian',
-    drawn: false,
+    drawnBy: '',
   },
   {
     name: 'grady',
     spouse: '',
-    drawn: false,
+    drawnBy: '',
   }
 ];
 

@@ -5,6 +5,11 @@
   "author": "Blake Guilloud <blake.guilloud@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "mongoose": "^4.12.5"
+    "bluebird": "^3.5.1",
+    "mongoose": "^4.12.5",
+    "serverless-helpers": "^0.0.6"
+  },
+  "scripts": {
+    "mock:blake": "SLS_DEBUG=true serverless invoke local --function hatDraw -p mocks/blake.json"
   }
 }

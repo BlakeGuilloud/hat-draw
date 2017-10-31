@@ -8,12 +8,10 @@ const UserSchema = new mongoose.Schema({
   spouse: {
     type: String,
     required: true,
-    default: '',
   },
-  drawn: {
-    type: Boolean,
+  drawnBy: {
+    type: String,
     required: true,
-    default: false,
   },
 });
 

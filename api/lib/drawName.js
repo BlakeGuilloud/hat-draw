@@ -9,18 +9,27 @@ const fetchDrawNameData = (user, data) => ({
   user: findUser(user, data),
 });
 
-const drawName = (str, data) => {
+const drawName = (str, data, drawCount = 0) => {
   const { randomUser, user } = fetchDrawNameData(str, data);
 
-  if (randomUser.name === user.name) {
+  const drawCountClone = drawCount + 1;
+
+  if (drawCountClone === 10) {
+    throw new Error('too many tries..');
+  } else if (randomUser.name === user.name) {
     console.log('name is user');
-    return drawName(user.name, data);
+    return drawName(user.name, data, drawCountClone);
   } else if (randomUser.name === user.spouse) {
     console.log('name is spouse');
-    return drawName(user.name, data);
+    return drawName(user.name, data, drawCountClone);
+  } else if (randomUser.drawnBy) {
+    console.log('drawn!');
+    return drawName(user.name, data, drawCountClone)
   } else {
-    console.log('WAHOO');
-    return randomUser;
+    return {
+      randomUser,
+      user,
+    };
   }
 };
 

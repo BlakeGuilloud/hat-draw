@@ -1,49 +1,19 @@
-const drawName = require('./drawName');
+const { handleSuccess, handleError, tryParse } = require('serverless-helpers/responses');
 
-const data = [
-  {
-    name: 'blake',
-    spouse: 'carolyn',
-  },
-  {
-    name: 'jen',
-    spouse: 'thomas',
-  },
-  {
-    name: 'thomas',
-    spouse: 'jen',
-  },
-  {
-    name: 'carolyn',
-    spouse: 'blake',
-  },
-  {
-    name: 'brian',
-    spouse: 'asuka',
-  },
-  {
-    name: 'asuka',
-    spouse: 'brian',
-  },
-  {
-    name: 'grady',
-    spouse: '',
-  }
-];
+const mongoose = require('./mongoose');
+const drawName = require('./lib/drawName');
+const { fetchUsers, updateUser } = require('./lib/service');
+const { superSecretUri } = require('./lib/config');
 
-const final = drawName('blake', data);
-console.log('final', final);
 
-// 'use strict';
-
-// module.exports.hello = (event, context, callback) => {
-//   const response = {
-//     statusCode: 200,
-//     body: JSON.stringify({
-//       message: 'Go Serverless v1.0! Your function executed successfully!',
-//       input: event,
-//     }),
-//   };
-
-//   callback(null, response);
-// };
+module.exports.hatDraw = (event, context, callback) => {
+  const db = mongoose.connect(superSecretUri, { useMongoClient: true });
+  
+  // const callback = (msg, err) => console.log(msg, err);
+  fetchUsers()
+    .then(data => drawName(tryParse(event.body).name, data))
+    .then(updateUser)
+    .then(response => callback(null, handleSuccess(response)))
+    .catch(err => callback(null, handleError(err)))
+    .finally(() => db.close());
+};
