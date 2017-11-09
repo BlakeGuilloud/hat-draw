@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "deploy": "yarn build && aws s3 sync build s3://hat-draw",
     "eject": "react-scripts eject"
   }
 }
