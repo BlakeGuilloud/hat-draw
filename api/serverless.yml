@@ -14,3 +14,10 @@ functions:
           path: hatDraw
           method: post
           cors: true
+  fetchUsers:
+    handler: handler.fetchUsers
+    events:
+      - http:
+          path: fetchUsers
+          method: get
+          cors: true

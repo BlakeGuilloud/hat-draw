@@ -14,3 +14,12 @@ module.exports.hatDraw = (event, context, callback) => {
     .catch(err => callback(null, handleError(err)))
     .finally(() => db.close());
 };
+
+module.exports.fetchUsers = (event, context, callback) => {
+  const db = mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
+
+  fetchUsers()
+    .then(response => callback(null, handleSuccess(response)))
+    .catch(err => callback(null, handleError(err)))
+    .finally(() => db.close());
+}
