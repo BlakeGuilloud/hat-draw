@@ -11,6 +11,6 @@
   },
   "scripts": {
     "seed": "node lib/seed.js",
-    "mock:blake": "SLS_DEBUG=true serverless invoke local --function hatDraw -p mocks/blake.json"
+    "mock:select": "SLS_DEBUG=true serverless invoke local --function hatDraw -p mocks/blake.json"
   }
 }

@@ -1,37 +1,44 @@
 module.exports = [
   {
+    name: 'asuka',
+    spouse: 'brian',
+    selection: '',
+    drawn: false,
+  },
+  {
     name: 'blake',
     spouse: 'carolyn',
-    drawnBy: '',
-  },
-  {
-    name: 'jen',
-    spouse: 'thomas',
-    drawnBy: '',
-  },
-  {
-    name: 'thomas',
-    spouse: 'jen',
-    drawnBy: '',
-  },
-  {
-    name: 'carolyn',
-    spouse: 'blake',
-    drawnBy: '',
+    selection: '',
+    drawn: false,
   },
   {
     name: 'brian',
     spouse: 'asuka',
-    drawnBy: '',
+    selection: '',
+    drawn: false,
   },
   {
-    name: 'asuka',
-    spouse: 'brian',
-    drawnBy: '',
+    name: 'carolyn',
+    spouse: 'blake',
+    selection: '',
+    drawn: false,
   },
   {
     name: 'grady',
     spouse: '',
-    drawnBy: '',
-  }
+    selection: '',
+    drawn: false,
+  },
+  {
+    name: 'jen',
+    spouse: 'thomas',
+    selection: '',
+    drawn: false,
+  },
+  {
+    name: 'thomas',
+    spouse: 'jen',
+    selection: '',
+    drawn: false,
+  },
 ];

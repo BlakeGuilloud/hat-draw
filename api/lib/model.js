@@ -9,10 +9,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  drawnBy: {
+  selection: {
     type: String,
     required: true,
   },
+  drawn: {
+    type: Boolean,
+    required: true,
+  }
 });
 
 module.exports = mongoose.model('User', UserSchema);

@@ -33,17 +33,18 @@ class Card extends Component {
           Are you sure you are {this.props.name}? 
         </span>
       )
-    }
+    };
+
     return (
       <div className="card-container">
         <div onClick={!this.state.disclaimer ? this.handleShowDisclaimer : this.handleCardFlip} className={this.state.cardClasses}>
           <div className="card-front">
             {this.state.disclaimer ? renderDisclaimer() : <h2>{this.state.cardClasses.includes('card-flip') ? null : this.props.name}</h2>}
           </div>
-          <img alt="" className="card-back" src={`./images/${this.props.name}.jpg`} />
+          <img alt="" className="card-back" src={`./images/${this.props.selection}.jpg`} />
         </div>
       </div> 
-    )
+    );
   }
 }
 
@@ -63,7 +64,7 @@ class App extends Component {
   render() {
     const renderCard = (item, idx) => {
       return (
-        <Card index={idx} name={item.name} drawn={item.drawnBy} key={idx} />
+        <Card selection={item.selection} index={idx} name={item.name} key={idx} />
       );
     };
 
@@ -71,7 +72,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">What up fam?</h1>
         </header>
         <div className="info">
           <h4>Welcome to the 2017 edition of Hatdraw!</h4>

@@ -12,11 +12,10 @@ const fetchDrawNameData = (user, data) => ({
   user: findUser(user, data),
 });
 
-// TODO: Need to include a check against User's DB to make sure the final two user's are not spouses..
 const isInvalidUser = (randomUser, user) =>
   randomUser.name === user.name ||
   randomUser.name === user.spouse ||
-  randomUser.drawnBy;
+  randomUser.drawn
 
 const drawName = (str, data, drawCount = 0) => {
   const drawCountClone = drawCount + 1;
