@@ -11,7 +11,5 @@ export function drawName(name) {
 
 export function fetchNames() {
   return axios.get(BASE_URL + 'fetchUsers')
-    .then((response) => {
-      console.log('response', response);
-    })
+    .then(response => response.data);
 }
