@@ -76,6 +76,7 @@ class App extends Component {
         <div className="info">
           <h4>Welcome to the 2017 edition of Hatdraw!</h4>
           <p>The rules should be pretty self explanatory. Find your name below and click it!</p>
+          <p>Make sure you do not click anyone's name but your own! Otherwise you will ruin the surprise!</p>
           <p>You will be asked to confirm your choice, and the app will reach into a hat and pick out your selection!</p>
           <p>Sorry it took so long xD</p>
         </div>
